@@ -1624,6 +1624,80 @@
                 font-size: 18px;
             }
         }
+
+        /* Image Modal */
+        .img-modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .img-modal-caption {
+            margin-top: 20px;
+            text-align: center;
+            color: #f1f1f1;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            animation: zoomIn 0.3s ease;
+            max-width: 90%;
+            letter-spacing: 1px;
+        }
+
+        .img-modal-content {
+            max-width: 90%;
+            max-height: 90vh;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            animation: zoomIn 0.3s ease;
+            object-fit: contain;
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .img-modal-close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            z-index: 1001;
+        }
+
+        .img-modal-close:hover,
+        .img-modal-close:focus {
+            color: var(--gold);
+        }
+
+        .gallery-grid img, .gallery-grid video {
+            cursor: pointer;
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+
+        .gallery-grid img:hover, .gallery-grid video:hover {
+            transform: scale(1.02);
+            filter: brightness(1.1);
+        }
     </style>
 </head>
 
@@ -1754,8 +1828,8 @@
                 <h2 class="sec-title">Who We Are</h2>
                 <div class="gold-rule"></div>
 
-                <p>VEER Sports Foundation is a registered Section 8 non-profit organization in India dedicated to youth
-                    development through cricket, sports, education, fitness, and leadership.</p>
+                <p>Veer Sports Foundation is registered as a non-profit organization under Section 8 of the Companies
+                    Act, 2013 and dedicated......</p>
                 <p>We operate with the core belief that every young individual deserves the opportunity to discover
                     their potential. By integrating sports with education and character building, we create a holistic
                     environment for growth.</p>
@@ -2089,7 +2163,9 @@
                 <span class="sec-tag">[ 06 ]</span>
                 <h2 class="supp-h">Support Our Mission</h2>
                 <div class="gold-rule"></div>
-                <p style="color: rgba(255,255,255,0.6); margin-bottom: 2rem; line-height: 1.8;">Play. Learn. Lead. Help us provide free training, scholarships, and equal opportunities to poor and specially-abled students from urban communities.</p>
+                <p style="color: rgba(255,255,255,0.6); margin-bottom: 2rem; line-height: 1.8;">Play. Learn. Lead. Help
+                    us provide free training, scholarships, and equal opportunities to poor and specially-abled students
+                    from urban communities.</p>
 
                 <p style="font-family: 'Courier Prime'; color: var(--gold); margin-bottom: 1rem; font-size: 14px;">YOUR
                     CONTRIBUTION HELPS:</p>
@@ -2139,47 +2215,53 @@
 
             <div class="gallery-grid"
                 style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 3rem;">
-                <div class="reveal"><img src="images/10.jpg" alt="Gallery Image"
-                        style="width: 100%; height: 300px; object-fit: cover; border-radius: 6px; border-bottom: 3px solid var(--gold);">
+                <div class="reveal"><img src="images/10.jpeg" alt="Gallery Image"
+                        style="width: 100%; height: 300px; object-fit: cover; object-position: top; border-radius: 6px; border-bottom: 3px solid var(--gold);">
                 </div>
-                <div class="reveal" style="transition-delay: 0.1s;"><img src="images/6.jpg" alt="Gallery Image"
-                        style="width: 100%; height: 300px; object-fit: cover; border-radius: 6px; border-bottom: 3px solid var(--gold);">
+                <div class="reveal" style="transition-delay: 0.1s;"><img src="images/6.jpeg" alt="Gallery Image"
+                        style="width: 100%; height: 300px; object-fit: cover; object-position: top; border-radius: 6px; border-bottom: 3px solid var(--gold);">
                 </div>
-                <div class="reveal" style="transition-delay: 0.2s;"><img src="images/9.jpg" alt="Gallery Image"
-                        style="width: 100%; height: 300px; object-fit: cover; border-radius: 6px; border-bottom: 3px solid var(--gold);">
+                <div class="reveal" style="transition-delay: 0.2s;"><img src="images/9.jpeg" alt="Gallery Image"
+                        style="width: 100%; height: 300px; object-fit: cover; object-position: top; border-radius: 6px; border-bottom: 3px solid var(--gold);">
                 </div>
-                <div class="reveal" style="transition-delay: 0.3s;"><img src="images/5.jpg" alt="Gallery Image"
-                        style="width: 100%; height: 300px; object-fit: cover; border-radius: 6px; border-bottom: 3px solid var(--gold);">
+                <div class="reveal" style="transition-delay: 0.3s;"><img src="images/5.jpeg" alt="Gallery Image"
+                        style="width: 100%; height: 300px; object-fit: cover; object-position: top; border-radius: 6px; border-bottom: 3px solid var(--gold);">
                 </div>
                 <div class="reveal" style="transition-delay: 0.4s;"><img src="images/3.jpeg" alt="Gallery Image"
-                        style="width: 100%; height: 300px; object-fit: cover; border-radius: 6px; border-bottom: 3px solid var(--gold);">
+                        style="width: 100%; height: 300px; object-fit: cover; object-position: top; border-radius: 6px; border-bottom: 3px solid var(--gold);">
                 </div>
                 <div class="reveal" style="transition-delay: 0.5s;"><img src="images/4.jpeg" alt="Gallery Image"
-                        style="width: 100%; height: 300px; object-fit: cover; border-radius: 6px; border-bottom: 3px solid var(--gold);">
+                        style="width: 100%; height: 300px; object-fit: cover; object-position: top; border-radius: 6px; border-bottom: 3px solid var(--gold);">
                 </div>
-                <div class="reveal"><img src="images/1.jpg.jpeg" alt="Gallery Image"
-                        style="width: 100%; height: 300px; object-fit: cover; border-radius: 6px; border-bottom: 3px solid var(--gold);">
+                <div class="reveal"><img src="images/1.jpeg" alt="Gallery Image"
+                        style="width: 100%; height: 300px; object-fit: cover; object-position: top; border-radius: 6px; border-bottom: 3px solid var(--gold);">
                 </div>
                 <div class="reveal" style="transition-delay: 0.1s;"><img src="images/2.jpeg" alt="Gallery Image"
-                        style="width: 100%; height: 300px; object-fit: cover; border-radius: 6px; border-bottom: 3px solid var(--gold);">
+                        style="width: 100%; height: 300px; object-fit: cover; object-position: top; border-radius: 6px; border-bottom: 3px solid var(--gold);">
                 </div>
-                <div class="reveal" style="transition-delay: 0.2s;"><img src="images/7.jpg" alt="Gallery Image"
-                        style="width: 100%; height: 300px; object-fit: cover; border-radius: 6px; border-bottom: 3px solid var(--gold);">
+                <div class="reveal" style="transition-delay: 0.2s;"><img src="images/7.jpeg" alt="Gallery Image"
+                        style="width: 100%; height: 300px; object-fit: cover; object-position: top; border-radius: 6px; border-bottom: 3px solid var(--gold);">
                 </div>
-                <div class="reveal" style="transition-delay: 0.3s;"><img src="images/8.jpg" alt="Gallery Image"
-                        style="width: 100%; height: 300px; object-fit: cover; border-radius: 6px; border-bottom: 3px solid var(--gold);">
+                <div class="reveal" style="transition-delay: 0.3s;"><img src="images/8.jpeg" alt="Gallery Image"
+                        style="width: 100%; height: 300px; object-fit: cover; object-position: top; border-radius: 6px; border-bottom: 3px solid var(--gold);">
                 </div>
                 <div class="reveal" style="transition-delay: 0.4s;"><img src="images/11.jpeg" alt="Gallery Image"
-                        style="width: 100%; height: 300px; object-fit: cover; border-radius: 6px; border-bottom: 3px solid var(--gold);">
+                        style="width: 100%; height: 300px; object-fit: cover; object-position: top; border-radius: 6px; border-bottom: 3px solid var(--gold);">
                 </div>
-                <div class="reveal" style="transition-delay: 0.5s;"><img src="images/whatsapp1.jpeg" alt="Gallery Image"
-                        style="width: 100%; height: 300px; object-fit: cover; border-radius: 6px; border-bottom: 3px solid var(--gold);">
+                <div class="reveal" style="transition-delay: 0.5s;"><img src="images/12.jpeg"
+                        alt="Our Approch Towards Disabled Students"
+                        style="width: 100%; height: 300px; object-fit: cover; object-position: top; border-radius: 6px; border-bottom: 3px solid var(--gold);">
                 </div>
-                <div class="reveal"><img src="images/whatsapp2.jpeg" alt="Gallery Image"
-                        style="width: 100%; height: 300px; object-fit: cover; border-radius: 6px; border-bottom: 3px solid var(--gold);">
+                <div class="reveal"><img src="images/13.jpeg" alt="Our Approch Towards Disabled Students"
+                        style="width: 100%; height: 300px; object-fit: cover; object-position: top; border-radius: 6px; border-bottom: 3px solid var(--gold);">
                 </div>
-                <div class="reveal" style="transition-delay: 0.1s;"><img src="images/whatsapp3.jpeg" alt="Gallery Image"
-                        style="width: 100%; height: 300px; object-fit: cover; border-radius: 6px; border-bottom: 3px solid var(--gold);">
+                <div class="reveal" style="transition-delay: 0.1s;"><img src="images/14.jpeg"
+                        alt="Our Approch Towards Disabled Students"
+                        style="width: 100%; height: 300px; object-fit: cover; object-position: top; border-radius: 6px; border-bottom: 3px solid var(--gold);">
+                </div>
+                <div class="reveal" style="transition-delay: 0.2s;">
+                    <video src="images/15.mp4" preload="metadata" data-alt="Our Approch Towards Disabled Students"
+                        style="width: 100%; height: 300px; object-fit: cover; border-radius: 6px; border-bottom: 3px solid var(--gold);"></video>
                 </div>
             </div>
         </div>
@@ -2394,6 +2476,14 @@
         </div>
     </footer>
 
+    <!-- Image Modal -->
+    <div id="imageModal" class="img-modal">
+        <span class="img-modal-close">&times;</span>
+        <img class="img-modal-content" id="imgModalSrc">
+        <video class="img-modal-content" id="vidModalSrc" controls style="display: none;"></video>
+        <div id="imgModalCaption" class="img-modal-caption"></div>
+    </div>
+
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             // Custom Cursor Logic
@@ -2539,6 +2629,48 @@
                 link.addEventListener('click', () => {
                     mobileMenu.classList.remove('active');
                 });
+            });
+
+            // Media Modal Logic
+            const modal = document.getElementById("imageModal");
+            const modalImg = document.getElementById("imgModalSrc");
+            const modalVid = document.getElementById("vidModalSrc");
+            const modalCaption = document.getElementById("imgModalCaption");
+            const closeBtn = document.querySelector(".img-modal-close");
+            const galleryMedia = document.querySelectorAll(".gallery-grid img, .gallery-grid video");
+
+            galleryMedia.forEach(media => {
+                media.addEventListener('click', function () {
+                    modal.style.display = "flex";
+                    modalCaption.innerText = this.alt || this.getAttribute('data-alt') || "";
+
+                    if (this.tagName.toLowerCase() === 'img') {
+                        modalImg.style.display = "block";
+                        modalVid.style.display = "none";
+                        modalImg.src = this.src;
+                        modalVid.pause();
+                        modalVid.src = "";
+                    } else if (this.tagName.toLowerCase() === 'video') {
+                        modalImg.style.display = "none";
+                        modalVid.style.display = "block";
+                        modalVid.src = this.src;
+                        modalVid.play();
+                    }
+                });
+            });
+
+            const closeModal = () => {
+                modal.style.display = "none";
+                modalVid.pause();
+                modalVid.src = "";
+            };
+
+            closeBtn.addEventListener('click', closeModal);
+
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    closeModal();
+                }
             });
         });
     </script>
